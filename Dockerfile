@@ -9,6 +9,6 @@ RUN CGO_ENABLED=0 go build -ldflags="-w -s" -v -o autorelease-action .
 # https://github.com/GoogleContainerTools/distroless
 FROM gcr.io/distroless/base-debian11
 
-COPY --from=builder /src/autorelease-action /autorelease-action
+COPY --from=builder /src/autorelease-action/autorelease-action /autorelease-action
 
 ENTRYPOINT ["/autorelease-action"]
